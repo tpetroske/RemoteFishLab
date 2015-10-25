@@ -13,33 +13,18 @@
 		
 		<div id="left">
 			<h5>VNC</h5>
+			
+			<iframe src="http://kanaka.github.io/noVNC/noVNC/vnc.html" width="99.5%" height="80%"> </iframe>
 		</div>
 		
 		<div id="right1">
 			<h5>Tank Cam</h5>
 			
 			<div id="container">
-				<video autoplay="true" id="videoElement"></video>
-				
-				<script language="JavaScript" type="text/javascript">
-				
-				function reload()
-				{
-					setTimeout(reloadImg("refresh"), 1000)
-				};
-				
-				function reloadImg(id)
-				{
-					var video = document.querySelector("#videoElement");
-					var date = new Date();
-					video.src = "http://97.102.171.24:88/snapshot.cgi?user=guest&pwd=guest&t=" + Math.floor(date.getTime()/1000);
-				}
-				</script>
-				<img src src="http://97.102.171.24:88/snapshot.cgi?user=guest&pwd=guest&t=" name="refresh" id="refresh" onload='reload(this)' onerror='reload(this)' />
 			
-			<!-- <iframe src ="http://97.102.171.24:88/" width="99%" height="350px">
-			<p>Your browser does not support iframes.</p>
-			</iframe> -->
+				<iframe src ="http://97.102.171.24:88/" width="99%" height="300px">
+					<p>Your browser does not support iframes.</p>
+				</iframe>
 			</div>
 		</div>
 		<div id="right2">
