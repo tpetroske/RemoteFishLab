@@ -11,21 +11,41 @@
 			<h1>Remote Fish Lab</h1>
 		</div>
 		
-		<div class="left">
+		<div id="left">
 			<h5>VNC</h5>
 		</div>
 		
 		<div id="right1">
 			<h5>Tank Cam</h5>
-			<iframe src ="" width="99%" height="350px">
+			
+			<div id="container">
+				<video autoplay="true" id="videoElement"></video>
+				
+				<script language="JavaScript" type="text/javascript">
+				
+				function reload()
+				{
+					setTimeout(reloadImg("refresh"), 1000)
+				};
+				
+				function reloadImg(id)
+				{
+					var video = document.querySelector("#videoElement");
+					var date = new Date();
+					video.src = "http://97.102.171.24:88/snapshot.cgi?user=guest&pwd=guest&t=" + Math.floor(date.getTime()/1000);
+				}
+				</script>
+				<img src src="http://97.102.171.24:88/snapshot.cgi?user=guest&pwd=guest&t=" name="refresh" id="refresh" onload='reload(this)' onerror='reload(this)' />
+			
+			<!-- <iframe src ="http://97.102.171.24:88/" width="99%" height="350px">
 			<p>Your browser does not support iframes.</p>
-			</iframe>
+			</iframe> -->
+			</div>
 		</div>
-		
 		<div id="right2">
 			<form action="action_page.php">
 
-	  			<select style="font-size:60px"; name="availableTanks">
+	  			<select name="availableTanks">
 	    			<option value="Tank 1">Tank 1</option>
 	    			<option value="Tank 2">Tank 2</option>
 	    			<option value="Tank 3">Tank 3</option>
